@@ -26,7 +26,7 @@
 	<link href="${contextPath}resources/css/guia-do-programador-style.css" rel="stylesheet" type="text/css"
 		media="all" />
 	<link href="${contextPath}resources/css/produtos.css" rel="stylesheet" type="text/css" media="all" />
-	<link rel="canonical" href="http://www.casadocodigo.com.br/" />
+	<link rel="canonical" href="#" />
 </head>
 
 <body>
@@ -47,7 +47,7 @@
 	</header>
 	<nav class="categories-nav">
 		<ul class="container">
-			<li class="category"><a href="http://www.casadocodigo.com.br">Home</a></li>
+			<li class="category"><a href="#">Home</a></li>
 			<li class="category"><a href="/collections/livros-de-agile"> Agile </a></li>
 			<li class="category"><a href="/collections/livros-de-front-end"> Front End </a></li>
 			<li class="category"><a href="/collections/livros-de-games"> Games </a></li>
@@ -137,18 +137,18 @@
 				<!-- books-footer -->
 				<p class="footer-title">Links da Casa do Código</p>
 				<ul class="footer-text-links">
-					<li><a href="http://livros.casadocodigo.com.br" rel="nofollow">Meus E-books</a></li>
+					<li><a href="#" rel="nofollow">Meus E-books</a></li>
 					<li><a href="/pages/sobre-a-casa-do-codigo">Sobre a Casa do Código</a></li>
 					<li><a href="/pages/perguntas-frequentes">Perguntas Frequentes</a></li>
-					<li><a href="https://www.caelum.com.br">Caelum - Ensino e Inovação</a></li>
+					<li><a href="#">Caelum - Ensino e Inovação</a></li>
 					<li><a href="http://www.codecrushing.com/" rel="nofollow">Code Crushing</a></li>
-					<li><a href="http://www.casadocodigo.com.br/pages/politica-de-privacidade" rel="nofollow">Política
+					<li><a href="#" rel="nofollow">Política
 							de Privacidade</a></li>
 				</ul>
 				<p class="footer-title">Redes Sociais</p>
 				<ul>
-					<li class="social-links"><a href="http://www.twitter.com/casadocodigo" target="_blank" id="twitter"
-							rel="nofollow">Facebook</a> <a href="http://www.facebook.com/casadocodigo" target="_blank"
+					<li class="social-links"><a href="#" target="_blank" id="twitter"
+							rel="nofollow">Facebook</a> <a href="#" target="_blank"
 							id="facebook" rel="nofollow">Twitter</a></li>
 				</ul>
 			</div>
