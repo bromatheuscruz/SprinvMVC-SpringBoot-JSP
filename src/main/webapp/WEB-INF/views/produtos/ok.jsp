@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Produto cadastrado com sucesso</h1>
+    <a href="/produtos">Ver produtos</a>
 </body>
 </html>

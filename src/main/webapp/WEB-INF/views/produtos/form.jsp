@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +12,43 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-    <form action="/produtos" method="POST">
+    <form:form 
+        action="${s:mvcUrl('PC#create').build()}" 
+        modelAttribute="produto" 
+        method="POST" 
+        enctype="multipart/form-data">
         <div>
             <label for="titulo">Título</label>
-            <input id="titulo" type="text" name="titulo">
+            <form:input id="titulo" path="titulo"/>
+            <form:errors path="titulo"/>
         </div>
         <div>
             <label for="descricao">Descrição</label>
-            <textarea name="descricao" id="descricao" cols="20" rows="10"></textarea>
+            <form:textarea path="descricao" id="descricao" cols="20" rows="10" />
+            <form:errors path="descricao"/>
         </div>
         <div>
             <label for="paginas">Páginas</label>
-            <input type="text" id="paginas" name="paginas">
+            <form:input id="paginas" path="paginas" />
+            <form:errors path="paginas"/>
+        </div>
+        <div>
+            <label for="data-lancamento">Data de lançamento</label>
+            <form:input id="data-lancamento" path="dataLancamento" />
+            <form:errors path="dataLancamento" />
         </div>
         <c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
             <div>
                 <label>${tipoPreco}</label>
-                <input type="text" name="precos[${status.index}].preco">
-                <input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}"> 
+                <form:input path="precos[${status.index}].preco"/>
+                <form:hidden path="precos[${status.index}].tipo" value="${tipoPreco}"/> 
             </div>
         </c:forEach>
+        <div>
+            <label for="sumario">Sumário</label>
+            <input type="file" name="sumario" id="sumario">
+        </div>
         <button type="submit">Cadastrar</button>
-    </form>
+    </form:form>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.iocruz.bookscode.models;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Produto
@@ -19,11 +22,18 @@ public class Produto {
     private Integer id;
     
     private String titulo;
+
     private String descricao;
+
     private Integer paginas;
 
     @ElementCollection
     private List<Preco> precos;
+
+    @DateTimeFormat
+    private Calendar dataLancamento;
+
+    private String sumarioPath;
 
     /**
      * @return the id
@@ -93,5 +103,33 @@ public class Produto {
      */
     public void setPrecos(List<Preco> precos) {
         this.precos = precos;
+    }
+
+    /**
+     * @return the dataLancamento
+     */
+    public Calendar getDataLancamento() {
+        return dataLancamento;
+    }
+
+    /**
+     * @param dataLancamento the dataLancamento to set
+     */
+    public void setDataLancamento(Calendar dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    /**
+     * @return the sumario
+     */
+    public String getSumarioPath() {
+        return sumarioPath;
+    }
+
+    /**
+     * @param sumario the sumario to set
+     */
+    public void setSumarioPath(String sumarioPath) {
+        this.sumarioPath = sumarioPath;
     }
 }
