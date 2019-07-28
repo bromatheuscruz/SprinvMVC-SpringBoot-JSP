@@ -1,6 +1,7 @@
 package com.iocruz.bookscode.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -75,6 +76,16 @@ public class ProdutosController {
         List<Produto> produtos = produtoRepository.findAll();
         modelAndView.addObject("produtos", produtos);
 
+        return modelAndView;
+    }
+
+    @GetMapping("/detalhe")
+    public ModelAndView detalhe(Integer id) {
+
+        Optional<Produto> produto = produtoRepository.findById(id);
+        ModelAndView modelAndView = new ModelAndView("produtos/detalhe");
+        modelAndView.addObject("produto", produto.get());
+        
         return modelAndView;
     }
     

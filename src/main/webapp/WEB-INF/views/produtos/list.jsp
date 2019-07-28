@@ -29,6 +29,9 @@
                 </tr>
             </c:forEach>
         </tbody>
+        <tfooter>
+            <a href="/produtos/form">Criar</a>
+        </tfooter>
     </table>
 </body>
 </html>
