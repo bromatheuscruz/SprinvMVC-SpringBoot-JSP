@@ -1,5 +1,7 @@
 package com.iocruz.bookscode.controllers;
 
+import java.util.concurrent.Callable;
+
 import com.iocruz.bookscode.models.Carrinho;
 import com.iocruz.bookscode.models.DadosPagamento;
 
@@ -32,21 +34,24 @@ public class PagamentoController {
     private String paymentUrl;
 
     @PostMapping("/finalizar")
-    public ModelAndView finalizar(RedirectAttributes redirectAttributes) {
+    public Callable<ModelAndView> finalizar(RedirectAttributes redirectAttributes) {
 
-        redirectAttributes.addFlashAttribute("mensagem", "Pagamento realizado com sucesso");
-        ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
-        
-        try {
-            
-            restTemplate.postForObject(paymentUrl, new DadosPagamento(carrinho.getTotal()), String.class);
+        return () -> {
+
             redirectAttributes.addFlashAttribute("mensagem", "Pagamento realizado com sucesso");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-            redirectAttributes.addFlashAttribute("mensagem", "Não foi possível efetuar o pagamento");
-        }
-        
-        return modelAndView;
+            ModelAndView modelAndView = new ModelAndView("redirect:/produtos");
+
+            try {
+
+                restTemplate.postForObject(paymentUrl, new DadosPagamento(carrinho.getTotal()), String.class);
+                redirectAttributes.addFlashAttribute("mensagem", "Pagamento realizado com sucesso");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                redirectAttributes.addFlashAttribute("mensagem", "Não foi possível efetuar o pagamento");
+            }
+
+            return modelAndView;
+        };
     }
 }
