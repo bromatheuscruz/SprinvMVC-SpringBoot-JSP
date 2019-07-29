@@ -3,7 +3,7 @@ html {
 }
 
 #logo {
-  background: url('/resources/imagens/cdc-logo.svg') no-repeat;
+  background: url('/casadocodigo/resources/imagens/cdc-logo.svg') no-repeat;
   background-size: 210px 61px;
   background-position: center;
   margin: 0;
@@ -233,5 +233,10 @@ html {
 @media only screen and (max-width: 768px) {
   #main-nav ul li {
     background: #000; /*ORIGINAL #000000*/
+  }
+
+  #main-nav ul li a:link,
+  #main-nav ul li a:visited {
+    /*color: #FFFFFF; /*CRIADO  */
   }
 }

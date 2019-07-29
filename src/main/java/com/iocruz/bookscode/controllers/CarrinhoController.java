@@ -47,6 +47,12 @@ public class CarrinhoController {
         return modelAndView;
     }
 
+    @RequestMapping
+    public ModelAndView remover(CarrinhoItem item) {
+        carrinho.remover(item);
+        return new ModelAndView("redirect:/carrinho");
+    }
+
     private CarrinhoItem criaItem(Produto produto, TipoPreco tipoPreco) {
         
         if (produto != null && tipoPreco != null) {

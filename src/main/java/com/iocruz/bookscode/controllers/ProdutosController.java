@@ -65,7 +65,7 @@ public class ProdutosController {
         }
 
         produtoRepository.save(produto);
-        redirect.addFlashAttribute("sucesso", "Produto cadastrado com sucesso");
+        redirect.addFlashAttribute("mensagem", "Produto cadastrado com sucesso");
 
         return new ModelAndView("redirect:/produtos");
     }
