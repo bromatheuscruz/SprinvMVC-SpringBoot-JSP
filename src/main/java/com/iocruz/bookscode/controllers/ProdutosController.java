@@ -12,6 +12,7 @@ import com.iocruz.bookscode.repositories.ProdutoRepository;
 import com.iocruz.bookscode.validators.ProdutoValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -51,6 +52,7 @@ public class ProdutosController {
     }
 
     @PostMapping
+    @CacheEvict(value = "produtosHome", allEntries = true)
     public ModelAndView create(
             MultipartFile sumario, 
             @Valid Produto produto, 

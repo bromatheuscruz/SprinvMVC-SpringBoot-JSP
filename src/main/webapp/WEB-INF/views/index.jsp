@@ -34,7 +34,8 @@
 			<div id="header-content">
 				<nav id="main-nav">
 					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build() }" rel="nofollow">Carrinho (${carrinhoCompras.quantidade })</a></li>
+						<li><a href="${s:mvcUrl('CC#itens').build() }" rel="nofollow">
+						Carrinho (${carrinho.quantidade })</a></li>
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
 						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
 					</ul>
@@ -61,7 +62,7 @@
 		
 		<ul class="clearfix book-collection">
 
-			<c:forEach items="${produtos }" var="produto">
+			<c:forEach items="${produtos}" var="produto">
 				<li>
 					<a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }" class="block clearfix">
 					<h2 class="product-title">${produto.titulo }</h2> 
